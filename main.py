@@ -15,7 +15,21 @@ def user_page(usuario):
 def map_page():
     return render_template('map.html')
 
+@app.route('/inicio')
+def inicio_page():
+    return render_template('inicio.html')
 
+@app.route('/login')
+def login_page():
+    return render_template('login.html')
+
+@app.route('/registrar')
+def registrar_page():
+    return render_template('registrar.html') 
+
+@app.route('/reportar')
+def reportar_page():
+    return render_template('reportar.html') 
 
 
 if __name__ == '__main__':
