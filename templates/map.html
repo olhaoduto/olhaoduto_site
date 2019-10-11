@@ -3,58 +3,142 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>KML Click Capture Sample</title>
+    <title>Olha o dutO</title>
     <style>
-      html, body {
-        height: 370px;
-        padding: 0;
-        margin: 0;
-        }
+
       #map {
-       height: 360px;
-       width: 300px;
-       overflow: hidden;
-       float: left;
-       border: thin solid #333;
-       }
-      #capture {
-       height: 360px;
-       width: 480px;
-       overflow: hidden;
-       float: left;
-       background-color: #ECECFB;
-       border: thin solid #333;
-       border-left: none;
-       }
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
     </style>
   </head>
   <body>
     <div id="map"></div>
-    <div id="capture"></div>
     <script>
-      var map;
-      var src = 'Dutovias.kml';
+
+var myLatLng  = {lat: -22.6091 , lng: -44.3401};
+
 
       function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(-19.257753, -22.1),
-          zoom: 2,
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: {lat: -22.6091 , lng: -44.3401},
           mapTypeId: 'terrain'
         });
 
-        var kmlLayer = new google.maps.KmlLayer(src, {
-          suppressInfoWindows: true,
-          preserveViewport: false,
-          map: map
+        var dutos = [
+{lat: -23.0943 , lng: -45.5754},
+{lat: -23.0816 , lng: -45.5366},
+{lat: -23.0298 , lng: -45.4641},
+{lat: -22.9775 , lng: -45.3859},
+{lat: -22.9389 , lng: -45.3390},
+{lat: -22.9187 , lng: -45.2934},
+{lat: -22.9109 , lng: -45.2082},
+{lat: -22.8775 , lng: -45.1634},
+{lat: -22.8344 , lng: -45.1447},
+{lat: -22.7793 , lng: -45.0521},
+{lat: -22.7384 , lng: -45.0078},
+{lat: -22.6598 , lng: -44.8959},
+{lat: -22.6641 , lng: -44.8674},
+{lat: -22.6405 , lng: -44.8012},
+{lat: -22.6228 , lng: -44.6970},
+{lat: -22.6425 , lng: -44.6026},
+{lat: -22.6173 , lng: -44.5489},
+{lat: -22.6173 , lng: -44.5331},
+{lat: -22.6174 , lng: -44.5300},
+{lat: -22.6174 , lng: -44.5296},
+{lat: -22.6175 , lng: -44.5293},
+{lat: -22.6176 , lng: -44.5290},
+{lat: -22.6178 , lng: -44.5287},
+{lat: -22.6192 , lng: -44.5266},
+{lat: -22.6195 , lng: -44.5259},
+{lat: -22.6199 , lng: -44.5245},
+{lat: -22.6203 , lng: -44.5237},
+{lat: -22.6207 , lng: -44.5230},
+{lat: -22.6210 , lng: -44.5222},
+{lat: -22.6210 , lng: -44.5219},
+{lat: -22.6209 , lng: -44.5212},
+{lat: -22.6208 , lng: -44.5208},
+{lat: -22.6208 , lng: -44.5201},
+{lat: -22.6208 , lng: -44.5197},
+{lat: -22.6208 , lng: -44.5192},
+{lat: -22.6208 , lng: -44.5187},
+{lat: -22.6213 , lng: -44.5169},
+{lat: -22.6214 , lng: -44.5162},
+{lat: -22.6215 , lng: -44.5159},
+{lat: -22.6219 , lng: -44.5148},
+{lat: -22.6219 , lng: -44.5146},
+{lat: -22.6235 , lng: -44.5044},
+{lat: -22.6044 , lng: -44.4516},
+{lat: -22.6091 , lng: -44.3401},
+{lat: -22.5960 , lng: -44.3153},
+{lat: -22.6045 , lng: -44.2904},
+{lat: -22.5916 , lng: -44.2335},
+{lat: -22.5973 , lng: -44.1402},
+{lat: -22.5698 , lng: -44.0718},
+{lat: -22.5273 , lng: -44.0408},
+{lat: -22.5711 , lng: -43.9199},
+{lat: -22.5896 , lng: -43.8941},
+{lat: -22.5950 , lng: -43.8567},
+{lat: -22.6232 , lng: -43.8164},
+{lat: -22.6208 , lng: -43.7928},
+{lat: -22.6307 , lng: -43.7846},
+{lat: -22.6288 , lng: -43.7415},
+{lat: -22.6284 , lng: -43.7359},
+{lat: -22.6289 , lng: -43.7270},
+{lat: -22.6322 , lng: -43.7231},
+{lat: -22.6331 , lng: -43.7220},
+{lat: -22.6337 , lng: -43.7219},
+{lat: -22.6341 , lng: -43.7225},
+{lat: -22.6351 , lng: -43.7232},
+{lat: -22.6358 , lng: -43.7236},
+{lat: -22.6367 , lng: -43.7238},
+{lat: -22.6371 , lng: -43.7238},
+{lat: -22.6378 , lng: -43.7236},
+{lat: -22.6381 , lng: -43.7235},
+{lat: -22.6382 , lng: -43.7234},
+{lat: -22.6392 , lng: -43.7079},
+{lat: -22.6477 , lng: -43.6967},
+{lat: -22.6474 , lng: -43.6764},
+{lat: -22.6549 , lng: -43.6763},
+{lat: -22.6610 , lng: -43.6683},
+{lat: -22.6641 , lng: -43.6587},
+{lat: -22.6621 , lng: -43.6506},
+{lat: -22.6589 , lng: -43.6455},
+{lat: -22.6533 , lng: -43.6417},
+{lat: -22.6498 , lng: -43.6357},
+{lat: -22.6453 , lng: -43.6300},
+{lat: -22.6425 , lng: -43.6276},
+{lat: -22.6414 , lng: -43.6245}
+
+
+
+        ];
+        var flightPath = new google.maps.Polyline({
+          path: dutos,
+          geodesic: true,
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 2
         });
-        kmlLayer.addListener('click', function(event) {
-          var content = event.featureData.infoWindowHtml;
-          var testimonial = document.getElementById('capture');
-          testimonial.innerHTML = content;
+
+ var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
         });
+
+
+        flightPath.setMap(map);
       }
     </script>
     <script async defer
+
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFIS2dF23vFwvoXWDKw6xADf3gucG8M2I&callback=initMap">
     </script>
   </body>
