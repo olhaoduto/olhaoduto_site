@@ -51,6 +51,9 @@ def about_page():
 def termos_page():
     return render_template('termos.html')
 
+@app.route('/dashboard')
+def dashboard_page():
+    return render_template('dashboard.html')
 
 if __name__ == '__main__':
     app.run()
