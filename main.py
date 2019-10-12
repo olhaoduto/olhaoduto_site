@@ -19,6 +19,10 @@ def map_page():
 def inicio_page():
     return render_template('inicio.html')
 
+@app.route('/sobre')
+def sobre_page():
+    return render_template('sobre.html')
+
 @app.route('/login')
 def login_page():
     return render_template('login.html')
@@ -30,6 +34,10 @@ def registrar_page():
 @app.route('/reportar')
 def reportar_page():
     return render_template('reportar.html') 
+
+@app.route('/reportarLogado')
+def reportarLogado_page():
+    return render_template('reportar-membro.html') 
 
 
 if __name__ == '__main__':
