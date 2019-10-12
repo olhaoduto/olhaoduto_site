@@ -1,0 +1,24 @@
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
+<script src="static/js/locationpicker.jquery.js"></script>
+<div id="somecomponent" style="width: 500px; height: 400px;"></div>
+<script>
+    $('#somecomponent').locationpicker({
+    location: {
+        latitude:  -22.6598,
+        longitude: -44.8959
+    },
+    radius: 50,
+    inputBinding: {
+        /*latitudeInput: $('#us7-lat'),
+        longitudeInput: $('#us7-lon'),
+        radiusInput: $('#us7-radius'),*/
+        locationNameInput: $('#address')
+    },
+    enableAutocomplete: true,
+    autocompleteOptions: {
+        types: ['(cities)'],
+        componentRestrictions: {country: 'br'}
+    }
+});
+</script>
