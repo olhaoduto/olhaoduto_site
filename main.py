@@ -33,6 +33,15 @@ def reportarLogado_page():
 def map_page():
     return render_template('map.html')
 
+@app.route('/mapa_users')
+def map_users_page():
+    return render_template('map_users.html')
+
+@app.route('/mapa_heat')
+def map_heat_page():
+    return render_template('map_heat.html')
+
+
 @app.route('/sobre')
 def about_page():
     return render_template('sobre.html')
