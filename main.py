@@ -9,6 +9,10 @@ app = Flask(__name__, static_folder='static')
 def inicio_page():
     return render_template('inicio.html')
 
+@app.route('/sobre')
+def sobre_page():
+    return render_template('sobre.html')
+
 @app.route('/login')
 def login_page():
     return render_template('login.html')
@@ -21,6 +25,10 @@ def registrar_page():
 def reportar_page():
     return render_template('reportar.html') 
 
+@app.route('/reportarLogado')
+def reportarLogado_page():
+    return render_template('reportar-membro.html') 
+    
 @app.route('/mapa')
 def map_page():
     return render_template('map.html')
