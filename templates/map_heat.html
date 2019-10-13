@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Heatmaps</title>
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -38,24 +33,7 @@
         z-index: 5;
       }
     </style>
-  </head>
-
-
-
-{% include "header.html" %}
-
-
-
-
-
-  <body>
-
-{% include "navbar.html" %}
-
-
-
-
-
+ 
     <div id="floating-panel">
       <button onclick="toggleHeatmap()">Toggle Heatmap</button>
       <button onclick="changeGradient()">Change gradient</button>
@@ -225,5 +203,3 @@ new google.maps.LatLng(-22.6215,-44.5159)
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFIS2dF23vFwvoXWDKw6xADf3gucG8M2I&libraries=visualization&callback=initMap">
     </script>
-  </body>
-</html>

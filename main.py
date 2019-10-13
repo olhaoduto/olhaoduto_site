@@ -55,5 +55,21 @@ def termos_page():
 def dashboard_page():
     return render_template('dashboard.html')
 
+@app.route('/dashboard-criticas')
+def dashboardCriticas_page():
+    return render_template('dashboard-criticas.html')
+
+@app.route('/dashboard-postos')
+def dashboardPostos_page():
+    return render_template('dashboard-postos.html')
+
+@app.route('/dashboard-crescimento')
+def dashboardCrescimento_page():
+    return render_template('dashboard-crescimento.html')
+
+@app.route('/dashboard-unidades-policias')
+def dashboardUnidadesPolicias_page():
+    return render_template('dashboard-unidades-policias.html')
+
 if __name__ == '__main__':
     app.run()
