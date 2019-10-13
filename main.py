@@ -71,5 +71,9 @@ def dashboardCrescimento_page():
 def dashboardUnidadesPolicias_page():
     return render_template('dashboard-unidades-policias.html')
 
+@app.route('/dashboard-milicias')
+def dashboardMilicias_page():
+    return render_template('dashboard-milicias.html')    
+
 if __name__ == '__main__':
     app.run()
