@@ -9,7 +9,7 @@ Projeto desenvolvido no evento [Hackfest 2019 - Um Rio de Dados](http://www.hack
 ## Authors
 
 * **Carol Braga**
-* **Felipe Kopp**
+* **Luis Filipe Kopp**
 * **Lilia de Souza**
 * **Kennedy Carvalho**
 * **Pamela Ohnitram**
